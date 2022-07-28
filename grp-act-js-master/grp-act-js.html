@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRP ACTIVITY - JS</title>
+    
+    <style>
+        table {
+            border: 2px solid black;
+            padding: 3px;
+            background-color: rgba(245, 245, 245, 0.795) ;
+        }
+
+        th, tr {
+            border: 1px solid black;
+            padding: 3px;
+        }
+        
+        body {
+            background-color: rgba(245, 245, 220, 0.726);
+        }
+
+        h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        th {
+            background-color:rgba(245, 222, 179, 0.589) ;
+        }
+
+    </style>
+</head>
+<body>
+    <p>
+        <h3>GRADE MATRIX</h3>
+        <table>
+    
+        <tr>
+        <th>QUARTER</th>
+        <th>GRADE</th>
+        </tr>
+    
+        <tr>
+        <td>1st Quarter</td>
+        <td><input type="text" id="1Q" size=3 maxlength="2"></td>
+        </tr>
+    
+        <tr>
+        <td>2nd Quarter</td>
+        <td><input type="text" id="2Q" size=3 maxlength="2"></td>
+        </tr>
+    
+        <tr>
+        <td>3rd Quarter</td>
+        <td><input type="text" id="3Q" size=3 maxlength="2"></td>
+        </tr>
+    
+        <tr>
+        <td>4th Quarter</td>
+        <td><input type="text" id="4Q" size=3 maxlength="2"></td>
+        </tr>
+        </table>    
+    </p>
+        <input type="button" value="CALCULATE FINAL GRADE"
+        onclick="calculator()">
+   
+
+    <hr>
+
+    <div id="displayGrade" style="height: 50px; width: 100%; color: red; font-weight: bold;">
+    </div>
+
+    <script>
+
+        function calculator()
+        {
+            var firstQuar=parseFloat(document.getElementById('1Q').value);
+            var SecQuar=parseFloat(document.getElementById('2Q').value);
+            var ThirdQuar=parseFloat(document.getElementById('3Q').value);
+            var FourthQuar=parseFloat(document.getElementById('4Q').value);
+
+            var totalGrade=firstQuar+SecQuar+ThirdQuar+FourthQuar;
+            var FinalGrade = totalGrade/4;
+            
+            var display=document.getElementById('displayGrade');
+
+            if (FinalGrade >= 75)
+            {
+               
+               display.innerHTML='YOUR FINAL GRADE IS: ' + Math.round(FinalGrade) + ' = PASSED';
+                display.style.color = 'green'; 
+            }
+                else {
+                    display.innerHTML='YOUR FINAL GRADE IS: ' + Math.round(FinalGrade) + ' = FAILED'; 
+                }
+        }
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id =p1 ></p>
+    <p id =p2></p>
+    <p id =p3 ></p>
+    <p id =p4 ></p>
+    <p id =p5 ></p>
+
+    <script>
+        var person = new Object();
+
+        person.firstname = "James";
+        person["lastname"] = "Bond";
+        person.age = 25;
+        person.getFullname =  function(){
+            return this.firstname + " " +this.lastname;
+        }
+
+        document.getElementById("p1").innerHTML = person.firstname;
+        document.getElementById("p2").innerHTML = person.lastname;
+
+        document.getElementById("p3").innerHTML = person["firstname"];
+        document.getElementById("p4").innerHTML = person["lastname"];
+
+        document.getElementById("p5").innerHTML = person.getFullname();
+    </script>
+
+</body>
+</html>
